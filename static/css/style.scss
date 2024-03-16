@@ -1,0 +1,565 @@
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: #9A4292;
+$danger: #be2f4b;
+$info:#2D70AE;
+$warning:#EFA929;
+$success: #2D9DA6;
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+// texts
+.cta-2 h5 {
+  font-weight: 300; /* Normal font weight */
+  color: #666; /* Adjust color for a subtler look */
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.cta-2 h1 {
+  font-weight: 600; /* Slightly bolder than normal */
+  color: #333; /* Adjust color for better contrast */
+  font-size: 3rem; /* Adjust font size as needed */
+}
+
+// Buttons
+.btn-login {
+    background: #EDE6F6;
+    color:#5D2057;
+    border-color: #EDE6F6;
+}
+
+.btn-login:hover {
+    background: #DBCBEC;
+    color: #5D2057;
+    border-color: #EDE6F6;
+}
+
+.btn-drop-down {
+  border: 2px solid inherit;
+  box-shadow: 0px 7px 0px #6e2d69; /* Use currentColor instead of inherit */
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-drop-down:hover {
+  transform: translateY(7px);
+  box-shadow: none;
+}
+
+
+// Headers
+.sub-header {
+  background: #F7F7F7;
+}
+
+.nav-pills .nav-link {
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+.nav-pills .nav-link:hover {
+    background-color: #e7e7e7; /* Change background color on hover to off-white */
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #DBCBEC; /* Set the background color for active link (secondary color) */
+  }
+  
+// Divider
+.divider {
+  box-shadow:inset 0 0 5px rgb(112, 112, 112);
+  // border-top: 1px solid rgba(0, 0, 0, 0.205);
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  padding: 15px 0; /* Top and bottom padding */
+  background: #F7F7F7;
+}
+
+
+// Footer
+.footer-container {
+  background: #F7F7F7;
+}
+
+.form-group {
+  border-radius: 4px; /* Rounded corners are maintained */
+}
+
+.form-control {
+  background-color: #f4f1f8; /* Lightest shade of purple */
+  /* Removed default border */
+  /* Add other input styles as needed (e.g., font size, padding) */
+}
+
+/* Style the submit button to your liking (replace placeholders) */
+.btn-primary {
+  background-color: [Your button color];
+  border-color: [Your button color]; /* Maintain button border */
+  color: [Your button text color];
+  /* Add other button styles as needed (e.g., padding, border-radius) */
+}
+
+
+// Carousel
+
+.cta-section {
+  position: relative; /* Required for z-index to work within the element */
+}
+
+.cta-section .cta-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 0; /* Overlay behind the content */
+}
+
+.container-75 {
+  position: relative; /* Required for z-index to work within the element */
+  width: 75%;
+  margin: 0 auto;
+  z-index: 1; /* Text and button container in front of the overlay */
+
+}
+
+.cta-section .carousel-tagline h2 {
+  color: white;
+}
+
+// Reviews
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  border-radius: 50%; /* Adjust for desired roundness */
+  background-color: #ddd; /* Optional background color */
+  color:black;
+}
+
+.review-section {
+  background-color: #ffffff; /* Adjust background color as needed */
+}
+
+.student-photo {
+  width: 100px;
+  height: 100px;
+}
+
+.review-quote {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.review-card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Styles for first review card */
+.card-border-shadow-purple {
+  border: 2px solid #9A4292; 
+  box-shadow: -5px 5px 2px #9A4292;
+}
+
+/* Styles for second review card */
+.card-border-shadow-blue {
+  border: 2px solid #2D70AE;
+  box-shadow: -5px 5px 2px #2D70AE;
+}
+
+/* Styles for third review card */
+.card-border-shadow-red {
+  border: 2px solid #be2f4b;
+  box-shadow: -5px 5px 2px #be2f4b;
+}
+
+/* Styles for fourth review card */
+.card-border-shadow-green {
+  border: 2px solid #2D9DA6;
+  box-shadow: -5px 5px 2px #2D9DA6;
+}
+
+/* Styles for fifth review card */
+.card-border-shadow-yellow {
+  border: 2px solid #EFA929;
+  box-shadow: -5px 5px 2px #EFA929;
+}
+
+.cta-2 {
+  background: #F7F7F7;
+}
+
+// Accordian card
+.accord {
+  height: 80vh; /* 80% viewport height */
+}
+
+.accord-nav > * {
+  z-index: 2;
+}
+
+.accord-nav {
+  padding-block: 3px;
+  padding-inline: 2px;
+  background-color: #f7f7f7; /* White background for navigation */
+  border-radius: 10px;
+}
+
+.accord-nav:has(.tab-1.active) {
+  border: 1px solid #2D70AE;
+  box-shadow: 0px 6px 12px #2D70AE;
+}
+
+.accord-nav:has(.tab-1.active) ~ .accord-cards {
+  border: 1px solid #2D70AE;
+  box-shadow: 0px 6px 12px #2D70AE;
+}
+
+.accord-nav:has(.tab-2.active) {
+  border: 1px solid #be2f4b;
+  box-shadow: 0px 6px 12px #be2f4b;
+}
+
+.accord-nav:has(.tab-2.active) ~ .accord-cards {
+  border: 1px solid #be2f4b;
+  box-shadow: 0px 6px 12px #be2f4b;
+}
+
+.accord-nav:has(.tab-3.active)  {
+  border: 1px solid #9A4292;
+  box-shadow: 0px 6px 12px #9A4292;
+}
+
+.accord-nav:has(.tab-3.active) ~ .accord-cards {
+  border: 1px solid #9A4292;
+  box-shadow: 0px 6px 12px #9A4292;
+}
+
+.nav-btn {
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px; /* Rounded corners for buttons */
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.nav-btn.tab-1.active {
+  color: #fff; /* Text color for active tab */
+  background-color: #2D70AE;
+}
+
+.nav-btn.tab-2.active {
+  color: #fff; /* Text color for active tab */
+  background-color: #be2f4b;
+}
+
+.nav-btn.tab-3.active {
+  color: #fff; /* Text color for active tab */
+  background-color: #9A4292;
+}
+
+.nav-btn h5, .nav-btn .h5 {
+  margin-bottom: 0px;
+}
+
+.accord-cards {
+  width: 100%;
+  overflow: hidden;
+  border-radius:10px;
+}
+
+.accord-cards {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.accord-card {
+  height: 0; /* Initial height of inactive cards */
+  overflow: hidden;
+  border: 1px solid #00000052;
+  box-shadow: 0px 0px 20px #00000080;
+  /* border-radius:5px; */
+  transition: height 0.5s ease-in-out; /* Smooth transition */
+}
+
+.accord-card.active {
+  height: 300px; /* Allow active card to expand smoothly */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Adjusted timing function */
+}
+
+// .accord-overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgb(0, 0, 0); /* Black with 0.5 opacity */
+//   // z-index: 1; /* Ensures overlay sits behind text content */
+// }
+
+
+.accord-image {
+  width: 100%;
+  height: auto;
+}
+
+.accord-content p {
+  padding: 20px;
+  font-size:18px;
+  font-weight:400;
+  text-shadow: 0px 0px 20px #000000b3
+}
+
+.accord-head h3 {
+ /* font-size:18px; */
+  font-weight:500;
+  text-shadow: 0px 0px 10px #000000bf
+}
+
+// Trusted banner
+.trusted-section {
+  display: flex; /* Make the section horizontally oriented */
+  justify-content: center; /* Center the content horizontally */
+  padding: 40px 20px;
+  background-color: white;
+}
+
+.trusted-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trusted-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.schools-percentage {
+  font-size: 36px;
+  color: #EFA929;
+  margin-left: 10px;
+}
+
+.trusted-grid {
+  display: flex; /* Make items display horizontally */
+  flex-wrap: nowrap; /* Prevent items from wrapping onto multiple lines */
+  justify-content: space-between; /* Distribute items with equal spacing */
+}
+
+.trusted-icon-container {
+  padding: 20px;
+  display: flex; /* Allow horizontal layout of content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text content horizontally */
+}
+
+.trusted-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.trusted-text {
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+}
+
+.icon-2 {  
+  position: relative;
+  top: 80px;
+  margin-bottom: 50px;
+}
+
+.trusted-arrow {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.trusted-arrow-container {
+  position: relative;
+}
+
+.footnote-link {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+// Mission Carousel
+
+#missionCarousel .carousel-item {
+  height: 500px;
+  overflow: hidden;
+}
+
+#missionCarousel .carousel-item img {
+  object-fit: cover;
+}
+
+.welcome-head {
+  margin-left: 80px;
+  z-index: 1;
+}
+
+.welcome-head h1 {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.719);
+}
+
+.welcome-head p {
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.699);
+}
+
+.welcome-img {
+  margin-left: -160px;
+  z-index: 0;
+}
+
+.mission-slide {
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.mission-content {
+  max-width: 700px;
+}
+
+.team {
+  background-color: #f7f7f7;  
+}
+
+.team-member img {
+  height: 150px;
+  width: 150px;
+}
+
+// Highlights
+
+// Values 
+.values {
+  background-color: #f7f7f7;
+}
+
+
+// Join community
+.btn-join {
+  border-radius: 25px;
+}
+.btn-whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+.btn-telegram {
+  background-color: #2AABEE;
+  border-color: #2AABEE;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  color: white;
+  background-color: #24c05d;
+}
+
+.btn-telegram:hover {
+  color: white;
+  background-color: #229ED9;
+}
+
+.group-card .card {
+  transition: 0.15s ease-in-out;
+}
+
+.card:has(.btn-whatsapp:hover) {
+  border: 1px solid #25D366;
+  box-shadow: -5px 5px 1px #25D366;
+  animation: none;
+}
+
+.card:has(.btn-telegram:hover) {
+  border: 1px solid #2AABEE;
+  box-shadow: -5px 5px 1px #2AABEE;
+  animation: none;
+}
+
+// Benifits
+.benefits .card {
+  border: 1px solid rgba(116, 116, 116, 0.411);
+  box-shadow: 0 0 3px rgba(116, 116, 116, 0.411);
+}
+
+// community hero
+.community-hero-img {
+  margin-bottom: -60px;
+}
+
+// Features
+.features-list {
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid ($primary);
+  box-shadow: -2px 2px 1px ($primary);
+  border-radius: 5px;
+}
+
+.features-img {
+  margin-left: -50px;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+// Testimonials
+.testimonials-section {
+  background-color: #ffffff; /* Adjust background color as needed */
+}
+
+.student-photo {
+  width: 100px;
+  height: 100px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.testimonial-card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 40%;
+  margin: 0 auto;
+}
+

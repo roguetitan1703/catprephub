@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../static/js/script.js"></script>
+
+
+  <title>CATPrepHub</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Sub header -->
+  <nav class="sub-header py-2 border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Youtube videos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">PDFs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">E-books</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Previous years' papers</a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li> -->
+      </ul>
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-primary btn-login me-2">Log in</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main header (nav) -->
+  <header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a href="index.html" class="d-flex align-items-center mt-1 me-2 mb-lg-0 text-decoration-none">
+        <img src="../static/img/header_logo.png" height="37.5" width="150">
+      </a>
+
+      <ul class="nav nav-pills col-12 col-lg-auto mb-2 justify-content-end list-unstyled">
+        <li class="nav-item">
+          <a href="performance.html" class="nav-link mx-2 text-black">My Performance</a>
+        </li>
+        <li class="nav-item">
+          <a href="rank_board.html" class="nav-link mx-2 text-black">Ranker Board</a>
+        </li>
+        <li class="nav-item">
+          <a href="comm_engage.html" class="nav-link mx-2 text-black">Community Engagement</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link mx-2 text-black">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="joinus.html" class="nav-link mx-2 text-black">Join Us</a>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <!-- CTA -->
+  <div class="cta-section py-5 text-center"
+    style="background-image: url('../static/img/ac-3.jpg'); background-size: cover; background-position: center;">
+    <div class="cta-container">
+      <div class="cta-overlay"></div>
+      <div id="taglineCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2 class="carousel-tagline text-white mb-4">Elevate your CAT exam success</h2>
+          </div>
+          <div class="carousel-item">
+            <h2 class="carousel-tagline text-white mb-4">Your Path to CAT excellence</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container container-75">
+        <p class="cta-description text-white mb-4">Ready to Test Yourself?
+        </p>
+        <!-- <div class="d-flex align-items-center"> -->
+        <a href="take_test.html" class="btn btn-lg btn-danger me-auto" id="cta-button">Take Mock Test</a>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <!-- Reviews -->
+  <div class="review-section py-5">
+    <h2 class="text-center mb-4">Reviews</h2>
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="button">
+      <div class="carousel-inner p-3">
+        <div class="carousel-item active">
+          <div class="review-card card-border-shadow-red d-flex flex-column align-items-center">
+            <img src="../static/img/std-1.jpg" alt="Student 1 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"This platform helped me significantly improve my test scores. The practice tests
+              were very realistic and provided valuable feedback."</p>
+            <p class="reviewer-name">John Doe - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-green d-flex flex-column align-items-center">
+            <img src="../static/img/std-2.jpg" alt="Student 2 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"I found the mock tests incredibly helpful in identifying my areas for improvement."
+            </p>
+            <p class="reviewer-name">John Doe - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-yellow d-flex flex-column align-items-center">
+            <img src="../static/img/std-3.jpg" alt="Student 3 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"The mock tests provided valuable insights that guided my study plan."</p>
+            <p class="reviewer-name">Emily Johnson - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-purple d-flex flex-column align-items-center">
+            <img src="../static/img/std-4.jpg" alt="Student 4 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"Taking the mock tests helped me pinpoint my weaknesses and focus on them."</p>
+            <p class="reviewer-name">Michael Brown - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-blue d-flex flex-column align-items-center">
+            <img src="../static/img/std-5.jpg" alt="Student 5 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"I'm grateful for the mock tests as they guided my study strategy effectively."</p>
+            <p class="reviewer-name">Sophia Martinez - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-red d-flex flex-column align-items-center">
+            <img src="../static/img/std-6.jpg" alt="Student 6 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"The mock tests were a fantastic tool for identifying my study priorities."</p>
+            <p class="reviewer-name">William Wilson - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-green d-flex flex-column align-items-center">
+            <img src="../static/img/std-7.jpg" alt="Student 7 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"The mock tests were instrumental in honing my study plan and focusing on key
+              areas."</p>
+            <p class="reviewer-name">Olivia Taylor - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-yellow d-flex flex-column align-items-center">
+            <img src="../static/img/std-8.jpg" alt="Student 8 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"Thanks to the mock tests, I could identify my weak spots and work on them
+              effectively."</p>
+            <p class="reviewer-name">Daniel Clark - Student</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card card-border-shadow-purple d-flex flex-column align-items-center">
+            <img src="../static/img/std-9.jpg" alt="Student 9 Photo" class="student-photo mb-3 rounded-circle">
+            <p class="review-quote">"The mock tests were invaluable in helping me focus my study efforts and improve."
+            </p>
+            <p class="reviewer-name">Isabella White - Student</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CTA - 2 -->
+  <div class="cta-2 py-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col">
+          <h5 class="lead">Build a Community among us</h5>
+          <h1 class="">Loved across <span class="text-primary">150+ countries</span></h1>
+          <a href="#" class="btn btn-primary mt-4 text-white btn-drop-down"
+            style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1.4rem;">Start Your Free
+            Trial</a>
+          <br>
+          <div class="d-flex justify-content-center">
+            <i class="fas fa-star"></i> <i class="fas fa-graduation-cap"></i>
+            <i class="fas fa-trophy"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trusted banner -->
+  <div class="trusted-section py-5">
+    <div class="trusted-wrapper">
+      <h2 class="trusted-heading">Trusted by teachers in <span class="schools-percentage">90% of CAT Academies</span>
+      </h2>
+      <div class="trusted-grid">
+        <div class="trusted-icon-container">
+          <img src="../static/img/clock-icon.svg" alt="Clock Icon" class="trusted-icon">
+          <div class="trusted-text">
+            <span class="trusted-highlight">Interactive mock tests</span>
+          </div>
+        </div>
+        <div class="trusted-icon-container arrow-1">
+          <img src="../static/img/yellow-arrow-1.svg" alt="" class="trusted-arrow">
+        </div>
+        <div class="trusted-icon-container  icon-2">
+          <img src="../static/img/clipboard-icon.svg" alt="Clipboard Icon" class="trusted-icon">
+          <div class="trusted-text">
+            <span class="trusted-highlight">Study material</span>
+          </div>
+        </div>
+        <div class="trusted-icon-container arrow-1">
+          <img src="../static/img/yellow-arrow-2.svg" alt="" class="trusted-arrow">
+        </div>
+        <div class="trusted-icon-container">
+          <img src="../static/img/anxiety-icon.svg" alt="Anxiety Icon" class="trusted-icon">
+          <div class="trusted-text">
+            <span class="trusted-highlight">Performance and progress analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Accordian -->
+  <div class="container py-2 accord mb-5">
+
+    <div class="accord-nav row d-flex justify-content-center align-items-center">
+      <div class="nav-btn tab-1 col-4 text-center active">
+        <h5><i class="bi bi-card-list"></i> Master Your Prep</h5>
+      </div>
+      <div class="nav-btn tab-2 col-4 text-center">
+        <h5><i class="bi bi-file-easel"></i> Stay Ahead</h5>
+      </div>
+      <div class="nav-btn tab-3 col-4 text-center">
+        <h5><i class="bi bi-graph-up-arrow"></i> Your All-in-One Toolkit</h5>
+      </div>
+    </div>
+
+    <div class="accord-cards text-white mt-3">
+      <div class="accord-card p-3 row active"
+        style="background-image: url('../static/img/ac-1.jpg'); background-size: cover; background-position: center;">
+        <div class="accord-head text-center">
+          <h3>Why High-Quality Materials Matter</h3>
+
+        </div>
+        <div class="accord-content col-7 d-flex align-items-center">
+          <p>The CAT exam demands a strategic approach. Reliable study materials provide a structured learning path,
+            saving you time and effort. Comprehensive materials cover all essential topics, offer various learning
+            resources, and are developed by experts for effective guidance.</p>
+        </div>
+        <div class="action-content col-5 d-flex align-items-center justify-content-center">
+          <a href="#" class="btn btn-info">Explore Materials</a>
+        </div>
+        <div class="accord-overlay"></div>
+      </div>
+      <div class="accord-card p-3 row"
+        style="background-image: url('../static/img/ac-2.jpg'); background-size: cover; background-position: center;">
+        <div class="accord-head text-center">
+          <h3>The Advantage of Updated Content</h3>
+        </div>
+        <div class="accord-content col-7 d-flex align-items-center">
+          <p>The CAT exam pattern and content can evolve. Using updated study materials ensures alignment with the
+            latest developments. Our materials are regularly reviewed, incorporate recent question trends, and equip
+            you with the newest exam strategies.</p>
+        </div>
+        <div class="action-content col-5 d-flex align-items-center justify-content-center">
+          <img src="../static/img/icon-refresh.svg" alt="Refresh icon" style="width: 40px; height: 40px;">
+        </div>
+        <div class="accord-overlay"></div>
+      </div>
+      <div class="accord-card p-3 row"
+        style="background-image: url('../static/img/ac-3.jpg'); background-size: cover; background-position: center;">
+        <div class="accord-head text-center">
+          <h3>Your All-in-One Toolkit</h3>
+        </div>
+        <div class="accord-content col-7 d-flex align-items-center">
+          <p>Our materials provide a complete solution: detailed study guides, a vast collection of practice
+            questions, simulated mock tests, and additional resources like expert tips and a discussion forum. This
+            eliminates the need for scattered materials and offers a streamlined learning experience.</p>
+        </div>
+        <div class="action-content col-5 d-flex align-items-center justify-content-center">
+          <button type="button" class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="accord-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Footer -->
+  <div class="footer-container mt-auto">
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center lead">We'd love to hear from you!</p>
+
+            <form>
+              <div class="mb-3 form-floating">
+                <input type="text" class="form-control" id="name" required="" placeholder="Enter your name">
+                <label for="name" class="form-label">Name</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                <input type="email" class="form-control" id="email" required="" placeholder="Enter your email">
+                <label for="email" class="form-label">Email Address</label>
+              </div>
+
+              <div class="mb-3 form-floating">
+                <input type="tel" class="form-control" id="phone" placeholder="Phone Number (Optional)">
+                <label for="phone" class="form-label">Phone Number (Optional)</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <p class="text-center mt-4">Thank you for contacting us! Happy prepping :)</p>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-between mt-4 border-top">
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#">
+                  <i class="bi bi-twitter"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+<script>
+</script>
+
+</html>
