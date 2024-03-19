@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %} Test - CATPrepHub  {% endblock title %}
+
+    {% block content %}
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <div class="test-form container my-5">
+      <h1 class="my-3 text-center">{{ test_section.description }}</h1>
+      <form method="post">
+        <input type="hidden" name="test_section_id" value={{test_section.id}}>
+        <input type="hidden" name="test_result_id" value={{test_result_id}}>
+        {% csrf_token %}
+        {% for question in questions %}
+          <div class="question p-3 mb-3">
+            <p>Q.{{ forloop.counter }} {{ question.text }}</p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="question_{{ question.id }}" id="option1_{{ question.id }}" value="{{ question.option1 }}">
+              <label class="form-check-label" for="option1_{{ question.id }}">
+                {{ question.option1 }}
+              </label>
+            </div>
+  
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="question_{{ question.id }}" id="option2_{{ question.id }}" value="{{ question.option2 }}">
+              <label class="form-check-label" for="option2_{{ question.id }}">
+                {{ question.option2 }}
+              </label>
+            </div>
+  
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="question_{{ question.id }}" id="option3_{{ question.id }}" value="{{ question.option3 }}">
+              <label class="form-check-label" for="option3_{{ question.id }}">
+                {{ question.option3 }}
+              </label>
+            </div>
+  
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="question_{{ question.id }}" id="option4_{{ question.id }}" value="{{ question.option4 }}">
+              <label class="form-check-label" for="option4_{{ question.id }}">
+                {{ question.option4 }}
+              </label>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="text-end">
+        <button type="submit" class="mt-auto mb-3 btn btn-warning">Submit Test</a>
+        </div>
+      </form>
+  
+{% endblock content %}

@@ -1,0 +1,190 @@
+{% extends "base.html" %} {% block title %} Test Analysis {% endblock title %}
+{% block nav %}
+    <!-- Sub header -->
+    <nav class="sub-header py-2 border-bottom">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav me-auto">
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Youtube videos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">PDFs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">E-books</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Previous years' papers</a>
+                </li>
+                <!-- <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li> -->
+            </ul>
+
+            <div class="text-end">
+                <form method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">Logout</button>
+              </form>
+              </div>
+        </div>
+    </nav>
+
+    <!-- Main header (nav) -->
+    <header class="py-3 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <a href="/" class="d-flex align-items-center mt-1 me-2 mb-lg-0 text-decoration-none">
+                <img src="../static/img/header_logo.png" height="37.5" width="150">
+            </a>
+
+            <ul class="nav nav-pills col-12 col-lg-auto mb-2 justify-content-end list-unstyled">
+                <li class="nav-item">
+                    <a href="/performance" class="nav-link mx-2 text-black active">My Performance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/rankboard" class="nav-link mx-2 text-black">Ranker Board</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/community" class="nav-link mx-2 text-black">Community Engagement</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link mx-2 text-black">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/joinus" class="nav-link mx-2 text-black">Join Us</a>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+    {% endblock nav %}
+    {% block content %}
+    <div class="analysis-container container my-5 py-3">
+      <h1 class="text-info text-center">Test Analysis</h1>
+    
+      {% if test_result %}
+        <div class="row">
+          <div class="col-md-6">
+            <div class="d-flex justify-content-between">
+              <h4>Test Section: {{ test_result.test_section.description }}</h4>
+              <h4 class="text-danger">Rank: {{ rank }}</h4>
+            </div>
+            <hr class="text-primary" style="height:5px;">
+            <ul class="list-group shadow-sm rounded">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #28a745;">Score:</span>
+                  <span class="float-right" style="font-weight: bold;">{{ test_result.score }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #ffc107;">Date:</span>
+                  <span class="float-right">{{ test_result.start_time | date:"d-m-Y" }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #dc3545;">Time Taken:</span>
+                  <span class="float-right">{{ test_result.time_taken }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #6c757d;">Attempted Questions:</span>
+                  <span class="float-right">{{ total_questions }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #28a745;">Correct Answers:</span>
+                  <span class="float-right">{{ correct_answers }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span style="color: #dc3545;">Wrong Answers:</span>
+                  <span class="float-right">{{ wrong_answers }}</span>
+                </li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+            <h5>Accuracy: {{ accuracy }}%</h5>
+            <div class="d-flex mb-3">
+              <canvas id="doughnutChartContainer" width="200" height="200"></canvas>
+            </div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#wrongAnswers">
+                View Wrong Answers
+              </button>
+                <div class="card">
+                  <div id="wrongAnswers" class="collapse" aria-labelledby="wrongAnswersHeading" data-parent="#accordion">
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        {% for question in wrong_answer_questions %}
+                          <li class="list-group-item">
+                            <p><strong>Q: {{ question.text }}</strong></p>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item text-danger">Your Answer: {{ question.option1 }}</li>
+                              <li class="list-group-item text-success">Correct Answer: {{ question.correct_option }}</li>
+                            </ul>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      {% else %}
+        <p>Invalid test result or no analysis available.</p>
+      {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <script>
+        const ctx = document.getElementById('doughnutChartContainer').getContext('2d');
+        const correctAnswers = {{ correct_answers }};  // Replace with actual value from your template
+        const wrongAnswers = {{ wrong_answers }};     // Replace with actual value from your template
+        const totalQuestions = 15;                   // Replace with actual value from your template
+        
+        // Calculate unanswered questions
+        const unanswered = totalQuestions - (correctAnswers + wrongAnswers);
+        
+        const chartData = {
+          labels: ['Correct (' + correctAnswers + ')', 'Wrong (' + wrongAnswers + ')', 'Unanswered (' + unanswered + ')'],
+          datasets: [{
+            label: 'Test Performance',
+            data: [correctAnswers, wrongAnswers, unanswered],
+            backgroundColor: [
+                'rgba(38, 194, 129, 0.9)',
+                'rgba(217, 30, 24, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+            ],
+            borderColor: [
+                'rgba(38, 194, 129, 1)',
+                'rgba(217, 30, 24, 1)',
+                'rgba(255, 206, 86, 1)',
+            ],
+            borderWidth: 1,
+          }]
+        };
+        
+        const config = {
+          type: 'doughnut',
+          data: chartData,
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              display: true,
+              position: 'bottom',
+              labels: {
+                fontColor: 'rgb(0, 0, 0)',
+              }
+            },
+            plugins: {
+              datalabels: {
+                display: function(context) {
+                  return context.dataset.data[context.dataIndex] > 0; // Only show labels for slices with data
+                },
+                color: 'white',
+                font: {
+                  weight: 'bold',
+                  size: 14,
+                },
+                formatter: (value, context) => {
+                  return value + ' (' + context.parsed.percentage + '%)';
+                },
+              }
+            }
+          }
+        };
+        
+        new Chart(ctx, config);
+        
+    </script>
+    
+    {% endblock content %}
+    
+    
+    

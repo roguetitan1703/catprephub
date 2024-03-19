@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %} CATPrepHub  {% endblock title %}
+{% block nav %}
+    <!-- Sub header -->
+    <nav class="sub-header py-2 border-bottom">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav me-auto">
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Youtube videos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">PDFs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">E-books</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Previous years' papers</a>
+                </li>
+                <!-- <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li> -->
+            </ul>
+
+            <div class="text-end">
+                <a href="login" class="btn btn-outline-primary btn-login me-2">Log in</a>
+                <a href="signup" class="btn btn-primary">Sign up</a>
+            </div>
+            <div class="text-end">
+                <form method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">Logout</button>
+              </form>
+              </div>
+        </div>
+    </nav>
+
+    <!-- Main header (nav) -->
+    <header class="py-3 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <a href="/" class="d-flex align-items-center mt-1 me-2 mb-lg-0 text-decoration-none">
+                <img src="../static/img/header_logo.png" height="37.5" width="150">
+            </a>
+
+            <ul class="nav nav-pills col-12 col-lg-auto mb-2 justify-content-end list-unstyled">
+                <li class="nav-item">
+                    <a href="/performance" class="nav-link mx-2 text-black">My Performance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/rankboard" class="nav-link mx-2 text-black">Ranker Board</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/community" class="nav-link mx-2 text-black">Community Engagement</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link mx-2 text-black">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/joinus" class="nav-link mx-2 text-black">Join Us</a>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+    {% endblock nav %}
+
+    {% block content %}
+
+{% endblock content %}

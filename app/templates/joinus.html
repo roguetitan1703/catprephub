@@ -1,0 +1,112 @@
+{% extends "base.html" %} {% block title %} Join us CATPrepHub {% endblock title %}
+{% block nav %}
+  <!-- Sub header -->
+  <nav class="sub-header py-2 border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Youtube videos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">PDFs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">E-books</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Previous years' papers</a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li> -->
+      </ul>
+
+      <div class="text-end">
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Logout</button>
+      </form>
+        {% comment %} <a href="login" class="btn btn-outline-primary btn-login me-2">Log in</a>
+        <a href="signup" class="btn btn-primary">Sign up</a> {% endcomment %}
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main header (nav) -->
+  <header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a href="/" class="d-flex align-items-center mt-1 me-2 mb-lg-0 text-decoration-none">
+        <img src="../static/img/header_logo.png" height="37.5" width="150">
+      </a>
+
+      <ul class="nav nav-pills col-12 col-lg-auto mb-2 justify-content-end list-unstyled">
+        <li class="nav-item">
+          <a href="performance" class="nav-link mx-2 text-black">My Performance</a>
+        </li>
+        <li class="nav-item">
+          <a href="rankboard" class="nav-link mx-2 text-black">Ranker Board</a>
+        </li>
+        <li class="nav-item">
+          <a href="community" class="nav-link mx-2 text-black">Community Engagement</a>
+        </li>
+        <li class="nav-item">
+          <a href="about" class="nav-link mx-2 text-black">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="joinus" class="nav-link mx-2 text-black active">Join Us</a>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+{% endblock nav %}
+
+{% block content %}
+  <!-- Form -->
+  <div class="container my-5">
+    <div class="row d-flex align-items-center">
+      <div class="col-md-8">
+        <h2 class="text-center mb-4">Join Us</h2>
+        <p class="text-center lead">Fill out the form to become a member.</p>
+
+        <form>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" id="name" required="" placeholder="Name">
+            <label for="name" class="form-label">Name</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="number" class="form-control" id="age" required="" placeholder="Age">
+            <label for="age" class="form-label">Age</label>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select" id="gender" required="" style="z-index: 0;">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="email" class="form-control" id="email" required="" placeholder="Email Address">
+            <label for="email" class="form-label">Email Address</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+            <label for="phone" class="form-label">Phone Number</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <textarea class="form-control" id="reason" rows="3" placeholder="Write your reason for joining"
+              style="height: 100px"></textarea>
+            <label for="reason" class="form-label">Why Do You Want to Join Us?</label>
+          </div>
+          <div class="mb-3">
+            <label for="resume" class="form-label">Upload Resume (PDF)</label>
+            <input type="file" class="form-control" id="resume" accept=".pdf" required="">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+      <div class="col-md-4">
+        <img src="../static/img/joinus.png" alt="" class="rounded-3" style="z-index:-1; margin-left:-100px;">
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}
