@@ -223,7 +223,10 @@ def testanalysis(request):
         wrong_answers = test_result.wrong_answers.count()
 
         # Calculate accuracy
-        accuracy = round((correct_answers / total_questions) * 100, 2)
+        if correct_answers == 0:
+            accuracy = 0 
+        else:
+            accuracy = round((correct_answers / total_questions) * 100, 2)
 
         # This is a placeholder for illustrative purposes
         all_test_results = TestResult.objects.all().order_by('-score')

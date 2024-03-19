@@ -6,10 +6,14 @@
   <body class="d-flex flex-column min-vh-100">
     <div class="test-form container my-5">
       <h1 class="my-3 text-center">{{ test_section.description }}</h1>
+      <div class="text-end mt-auto"><h5 id="timer" ></h5></div>
+
       <form method="post">
         <input type="hidden" name="test_section_id" value={{test_section.id}}>
         <input type="hidden" name="test_result_id" value={{test_result_id}}>
         {% csrf_token %}
+
+        
         {% for question in questions %}
           <div class="question p-3 mb-3">
             <p>Q.{{ forloop.counter }} {{ question.text }}</p>
@@ -43,8 +47,48 @@
           </div>
         {% endfor %}
         <div class="text-end">
-        <button type="submit" class="mt-auto mb-3 btn btn-warning">Submit Test</a>
+        <button id="#test-form" type="submit" class="mt-auto mb-3 btn btn-warning">Submit Test</a>
         </div>
       </form>
-  
-{% endblock content %}
+    </div>
+
+    <script>
+      function startTimer(duration, submitButton) {
+        // Set the initial duration (in seconds)
+        var countdown = duration;
+      
+        // Update the timer display every 1 second
+        var intervalId = setInterval(function() {
+          countdown--; // Decrement the timer
+      
+          // Calculate minutes and seconds
+          var minutes = Math.floor(countdown / 60);
+          var seconds = countdown % 60;
+      
+          // Format the timer display with leading zeros
+          var timerDisplay = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+      
+          // Update the timer element's content
+          document.getElementById("timer").innerHTML = timerDisplay;
+      
+          // Handle timer expiration
+          if (countdown < 0) {
+            clearInterval(intervalId); // Stop the timer
+            document.getElementById("timer").innerHTML = "EXPIRED";
+            submitButton.click(); // Click the submit button to auto-submit the test
+          }
+        }, 1000); // Update interval every second
+      }
+      
+      $(document).ready(function() {
+        const submitButton = document.getElementById('#test-form');
+        console.log(submitButton)
+        const testDuration = 60; // Set test duration in seconds (adjust as needed)
+        startTimer(testDuration, submitButton); // Start the timer with duration and submit button
+      });
+      </script>
+      
+        
+      
+    {% endblock content %}
+
