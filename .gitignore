@@ -1,6 +1,5 @@
 .vscode
-about.txt
-comm.txt
-toclient.txt
-todo.txt
-templates/test
+.venv
+__pycahce__
+app/__pycache__
+catprephub/__pycache__

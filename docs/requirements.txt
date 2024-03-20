@@ -1,3 +1,0 @@
-# Install Live Sass Compiler from vs code
-npm install bootstrap@5.3.3
-npm i bootstrap-icons
