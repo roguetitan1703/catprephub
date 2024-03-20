@@ -3,3 +3,6 @@
 __pycahce__
 app/__pycache__
 catprephub/__pycache__
+venv
+docs/toclient.txt
+docs/todo.txt
