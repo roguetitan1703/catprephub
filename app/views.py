@@ -293,3 +293,7 @@ def performance(request):
     else:
         return HttpResponse("Invalid request method")
         
+        
+@login_required
+def resources(request):
+    return render(request, 'resources.html')
