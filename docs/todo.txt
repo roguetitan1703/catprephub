@@ -1,0 +1,4 @@
+1. Make section 2 add the content about study materials -- update [its done, just get new images and keep em dark only and cta improve kr]
+2. study page (idk what it means)
+3. setup django
+4. make questions 
