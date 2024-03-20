@@ -3,19 +3,15 @@
     <!-- Sub header -->
     <nav class="sub-header py-2 border-bottom">
         <div class="container d-flex flex-wrap">
-            <ul class="nav me-auto active">
-                <li class="nav-item"><a href="resources" class="nav-link link-body-emphasis px-2">Youtube videos</a></li>
-                <li class="nav-item"><a href="resources" class="nav-link link-body-emphasis px-2">PDFs</a></li>
-                <li class="nav-item"><a href="resources" class="nav-link link-body-emphasis px-2">E-books</a></li>
-                <li class="nav-item"><a href="resources" class="nav-link link-body-emphasis px-2">Previous years' papers</a>
+            <ul class="nav me-auto">
+                <li class="nav-item"><a href="#youtube" class="nav-link px-2 active">Youtube videos</a></li>
+                <li class="nav-item"><a href="#pdfs" class="nav-link px-2 active">PDFs</a></li>
+                <li class="nav-item"><a href="#ebooks" class="nav-link px-2 active">E-books</a></li>
+                <li class="nav-item"><a href="#pyqs" class="nav-link px-2 active">Previous years' papers</a>
                 </li>
                 <!-- <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li> -->
             </ul>
 
-            <div class="text-end">
-                <a href="login" class="btn btn-outline-primary btn-login me-2">Log in</a>
-                <a href="signup" class="btn btn-primary">Sign up</a>
-            </div>
             <div class="text-end">
                 <form method="post" action="{% url 'logout' %}">
                   {% csrf_token %}
@@ -55,5 +51,44 @@
     {% endblock nav %}
 
     {% block content %}
+    <section class="rounded-section">
+        <div id="youtube" class="container p-3 my-4 rounded card-border-shadow-red">
+          <h2>Youtube Videos</h2>
+          <hr>
+          <div>
+            <iframe width="280" height="150" class="rounded shadow m-2" src="https://www.youtube.com/embed/CiScCkzt0F4" title="250 Days to CAT 2024 | Daily Schedule | Syllabus for CAT exam | How to start my CAT Preparation ?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="280" height="150" class="rounded shadow m-2" src="https://www.youtube.com/embed/sdeFD6ih1-Q" title="FREE CAT Preparation Resources ➤ How to Self Prepare for CAT 2024?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="280" height="150" class="rounded shadow m-2" src="https://www.youtube.com/embed/NylZO0Yqdvo" title="CAT exam FREE Resources ➤ CAT Preparation 2024 | FREE Classes, Mocks, Books" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="280" height="150" class="rounded shadow m-2" src="https://www.youtube.com/embed/qA99lfl7sG0" title="CAT 2024 Preparation from March ➤ Detailed Strategy for 99 Percentile!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="280" height="150" class="rounded shadow m-2" src="https://www.youtube.com/embed/a1ICJSYq_gg" title="Daily Routine for CAT 2024 ➤ Guaranteed 99 Percentile!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        </div>
+        <div id="pdfs" class="container p-3 my-4 rounded card-border-shadow-blue">
+          <h2>PDFs</h2>
+          <div class="text-end">
+          <a class="btn btn-info" href="https://collegedunia.com/exams/cat/study-material#VARC">Browse Pdfs</a>
+          </div>
+          </div>
+        <div id="ebooks" class="container p-3 my-4 rounded card-border-shadow-purple">
+          <h2>E-books</h2>
+          <div class="d-flex">
+            <div class="list-group mt-2 rounded-0">
+                <a href="https://bodheeprep.com/wp-content/uploads/2023/01/number-system-final.pdf" class="list-group-item list-group-item-action">Number System</a>
+                <a href="https://bodheeprep.com/wp-content/uploads/2023/01/arithmetic-final.pdf" class="list-group-item list-group-item-action">Arithmetic</a>
+                <a href="https://bodheeprep.com/wp-content/uploads/2023/01/grammar.pdf" class="list-group-item list-group-item-action">Grammar</a>
+                <a href="https://bodheeprep.com/wp-content/uploads/2023/01/vocabulart-cat.pdf" class="list-group-item list-group-item-action">Vocabulary (CAT)</a>
+                </div>
+              
+
+          </div>
+          </div>
+        <div id="pyqs" class="container p-3 my-4 rounded card-border-shadow-green">
+          <h2>Previous Years' Papers</h2>
+          <div class="text-end">
+            <a class="btn btn-success" href="https://collegedunia.com/exams/cat/study-material#Sample-Papers">Download PYQs</a>
+            </div>
+          </div>
+      </section>
+      
 
 {% endblock content %}
